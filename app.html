@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+<title>Aplicación</title>
+<meta http-equiv="Refresh" content="60; url='Super App/index.html'" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+  background-image: url("https://github.com/JstMStudio/New-Platform/blob/main/background%202.gif?raw=true");
+background-repeat: no-repeat;
+background-attachment: fixed; 
+background-size: cover;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #34eb9e;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: pink;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.contentbox {
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+background-color: yellow;
+border: 6px solid red;
+color: green;
+padding: 8px;
+height: 100%;
+}
+
+.navbutton {
+padding:3px;
+font-weight: bold;
+color: purple;
+float: left;
+}
+
+.navbutton:hover {
+padding:3px;
+font-weight: bold;
+color: green;
+float: left;
+}
+
+.navbutton:active {
+padding:3px;
+font-weight: bold;
+color: red;
+float: left;
+}
+
+/* Theme ovveride */
+
+.collapsible {
+  cursor: pointer;
+  border: none;
+  padding:13px;
+  text-align: left;
+  outline: none;
+  font-size: 11px;
+position: -webkit-sticky; /* Safari */
+  position: sticky;
+  bottom: 0;
+  background-color:#033d0b;
+  color: cyan;
+    z-index:150;
+    position: fixed;
+    _position:absolute;
+    _top:expression(eval(document.documentElement.scrollTop+
+        (document.documentElement.clientHeight-this.offsetHeight)));
+        right: 5px;
+        box-shadow: 5px 5px grey;
+        margin-bottom:10px;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: silver;
+  position: -webkit-sticky; /* Safari */
+  background-color:#03373d;
+  text-align: center;
+  color: cyan;
+      position:fixed;
+    z-index:150;
+    _position:absolute;
+    _top:expression(eval(document.documentElement.scrollTop+
+        (document.documentElement.clientHeight-this.offsetHeight)));
+        right: 0;
+        bottom: 0;
+        font-weight: bold;
+}
+
+.active {
+  bottom:180px;
+          box-shadow: none;
+          margin-bottom:0px;
+  
+}
+
+.dark-mode .contentbox {
+  background-color: black;
+  color: cyan;
+}
+
+.red-mode .contentbox {
+  background-color: red;
+}
+
+.blue-mode .contentbox {
+  background-color: blue;
+  color: cyan;
+}
+
+.green-mode .contentbox {
+  background-color: green;
+  color: yellow;
+}
+
+.yellow-mode .contentbox {
+  background-color: yellow;
+  color: green;
+}
+
+.orange-mode .contentbox {
+  background-color: orange;
+  color: blue;
+}
+
+.purple-mode .contentbox {
+  background-color: purple;
+  color: cyan;
+}
+
+.magenta-mode .contentbox {
+  background-color: magenta;
+  color: #1a2b22;
+}
+  
+.text-black .contentbox {
+  color: black;
+}
+
+.text-red .contentbox {
+  color: red;
+}
+
+.text-blue .contentbox {
+  color: blue;
+}
+
+.text-green .contentbox {
+  color: green;
+}
+
+.text-yellow .contentbox {
+  color: yellow;
+}
+
+.text-orange .contentbox {
+  color: orange;
+}
+
+.text-purple .contentbox {
+  color: purple;
+}
+
+.text-magenta .contentbox {
+  color: magenta;
+}
+
+.button2 {
+float:center;
+background-color: black;
+  color: red;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  color: yellow;
+}
+
+/* Theme override */
+
+.button {
+  border-radius: 4px;
+  background-color: lightblue;
+  border: 5px solid blue;
+  color: darkred;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<h2 style="color: cyan;text-align:center;">Plataforma JstMStudio</h2>
+   <a href="index.html">Inicio</a>
+   <a href="about.html">Acerca de</a>
+   <a href="client.html">Cliente</a>
+   <a href="documentation.html">Documentación</a>
+   <a href="app.html">Aplicación</a>
+</div>
+
+<div id="main">
+  <div class="contentbox">
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()" style="" class="navbutton">&#9776;</span>
+  <br><br><br>
+<h1>Súper aplicación progresiva JstMStudio</h1>
+<p>¡Bienvenido a JstMStudio Progressive Super App (PWA)! Súper aplicación oficial para todos los servicios proporcionados por JstMStudio. JstMStudio es totalmente gratuito para todos, sin tarifas ocultas. La aplicación web progresiva JstMStudio también es de código abierto para que todos puedan ver, estudiar y modificar el código fuente de esta aplicación.</p>
+<br>
+<p>JstMStudio actualmente brinda a todos el acceso a nuestro lugar de trabajo público, que actualmente está integrado a esta súper aplicación. JstMStudio Workplace es un lugar donde desarrollamos nuevos servicios para nuestros proyectos y para que todos puedan probarlo antes de su lanzamiento. </p>
+<br>
+<a href="Super App/index.html"><button class="button"><span>Ingrese aquí a nuestra súper aplicación </span></button></a>
+  </div> 
+</div>
+
+<button type="button" class="collapsible" style="margin-top:60px;"><h3>&#9776; Personalización del tema</h3></button>
+<div clase="content">
+<p>Color del texto</p>
+<button onclick="myFunction11()" style="background-color: black;" class="button2"></button>
+<button onclick="myFunction12()" style="background-color: red;" class="button2"></button>
+<button onclick="myFunction13()" style="background-color: blue;" class="button2"></button>
+<button onclick="myFunction14()" style="background-color: green;" class="button2"></button>
+<button onclick="myFunction15()" style="background-color: yellow;" class="button2"></button>
+<button onclick="myFunction16()" style="background-color: orange;" class="button2"></button>
+<button onclick="myFunction17()" style="background-color: purple;" class="button2"></button>
+<button onclick="myFunction18()" style="background-color: magenta;" class="button2"></button>
+<br>
+<br>
+    <p>Temas de fondo</p>
+<button onclick="myFunction()" style="background-color: black;" class="button2"></button>
+<button onclick="myFunction2()" style="background-color: red;" class="button2"></button>
+<button onclick="myFunction3()" style="background-color: blue;" class="button2"></button>
+<button onclick="myFunction4()" style="background-color: green;" class="button2"></button>
+<button onclick="myFunction5()" style="background-color: yellow;" class="button2"></button> 
+<button onclick="myFunction6()" style="background-color: orange;" class="button2"></button>
+<button onclick="myFunction7()" style="background-color: purple;" class="button2"></button>
+<button onclick="myFunction8()" style="background-color: magenta;" class="button2"></button>
+</div>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+
+function myFunction2() {
+   var element = document.body;
+   element.classList.toggle("red-mode");
+}
+
+function myFunction3() {
+   var element = document.body;
+   element.classList.toggle("blue-mode");
+}
+
+function myFunction4() {
+   var element = document.body;
+   element.classList.toggle("green-mode");
+}
+
+function myFunction5() {
+   var element = document.body;
+   element.classList.toggle("yellow-mode");
+}
+
+function myFunction6() {
+   var element = document.body;
+   element.classList.toggle("orange-mode");
+}
+
+function myFunction7() {
+   var element = document.body;
+   element.classList.toggle("purple-mode");
+}
+
+function myFunction8() {
+   var element = document.body;
+   element.classList.toggle("magenta-mode");
+}
+  
+function myFunction11() {
+   var element = document.body;
+   element.classList.toggle("text-black");
+}  
+
+function myFunction12() {
+   var element = document.body;
+   element.classList.toggle("text-red");
+}  
+
+function myFunction13() {
+   var element = document.body;
+   element.classList.toggle("text-blue");
+}  
+
+function myFunction14() {
+   var element = document.body;
+   element.classList.toggle("text-green");
+}  
+
+function myFunction15() {
+   var element = document.body;
+   element.classList.toggle("text-yellow");
+}  
+
+function myFunction16() {
+   var element = document.body;
+   element.classList.toggle("text-orange");
+}  
+
+function myFunction17() {
+   var element = document.body;
+   element.classList.toggle("text-purple");
+}  
+
+function myFunction18() {
+   var element = document.body;
+   element.classList.toggle("text-magenta");
+}  
+</script>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "100%";
+  document.getElementById("main").style.marginLeft = "100%";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+  
+  <script src="https://swetrix.org/swetrix.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    swetrix.init('13a2nGRC9iGh')
+    swetrix.trackViews()
+  })
+</script>
+<noscript>
+  <img
+    src="https://api.swetrix.com/log/noscript?pid=bbS0szbjjP2r"
+    alt=""
+    referrerpolicy="no-referrer-when-downgrade"
+  />
+</noscript>
+   
+</body>
+</html> 

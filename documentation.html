@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+<title></title>
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="../dropdown.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+  background-image: url("https://github.com/JstMStudio/New-Platform/blob/main/background%202.gif?raw=true");
+background-repeat: no-repeat;
+background-attachment: fixed; 
+background-size: cover;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #34eb9e;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: pink;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.contentbox {
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+background-color: yellow;
+border: 6px solid red;
+color: green;
+padding: 8px;
+}
+
+.navbutton {
+padding:3px;
+font-weight: bold;
+color: purple;
+float: left;
+}
+
+.navbutton:hover {
+padding:3px;
+font-weight: bold;
+color: green;
+float: left;
+}
+
+.navbutton:active {
+padding:3px;
+font-weight: bold;
+color: red;
+float: left;
+}
+
+/* Theme ovveride */
+
+.collapsible {
+  cursor: pointer;
+  border: none;
+  padding:13px;
+  text-align: left;
+  outline: none;
+  font-size: 11px;
+position: -webkit-sticky; /* Safari */
+  position: sticky;
+  bottom: 0;
+  background-color:#033d0b;
+  color: cyan;
+    z-index:150;
+    position: fixed;
+    _position:absolute;
+    _top:expression(eval(document.documentElement.scrollTop+
+        (document.documentElement.clientHeight-this.offsetHeight)));
+        right: 5px;
+        box-shadow: 5px 5px grey;
+        margin-bottom:10px;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: silver;
+  position: -webkit-sticky; /* Safari */
+  background-color:#03373d;
+  text-align: center;
+  color: cyan;
+      position:fixed;
+    z-index:150;
+    _position:absolute;
+    _top:expression(eval(document.documentElement.scrollTop+
+        (document.documentElement.clientHeight-this.offsetHeight)));
+        right: 0;
+        bottom: 0;
+        font-weight: bold;
+}
+
+.active {
+  bottom:200px;
+          box-shadow: none;
+          margin-bottom:0px;
+}
+
+.dark-mode .contentbox {
+  background-color: black;
+  color: cyan;
+}
+
+.red-mode .contentbox {
+  background-color: red;
+}
+
+.blue-mode .contentbox {
+  background-color: blue;
+  color: cyan;
+}
+
+.green-mode .contentbox {
+  background-color: green;
+  color: yellow;
+}
+
+.yellow-mode .contentbox {
+  background-color: yellow;
+  color: green;
+}
+
+.orange-mode .contentbox {
+  background-color: orange;
+  color: blue;
+}
+
+.purple-mode .contentbox {
+  background-color: purple;
+  color: cyan;
+}
+
+.magenta-mode .contentbox {
+  background-color: magenta;
+  color: #1a2b22;
+}
+  
+.text-black .contentbox {
+  color: black;
+}
+
+.text-red .contentbox {
+  color: red;
+}
+
+.text-blue .contentbox {
+  color: blue;
+}
+
+.text-green .contentbox {
+  color: green;
+}
+
+.text-yellow .contentbox {
+  color: yellow;
+}
+
+.text-orange .contentbox {
+  color: orange;
+}
+
+.text-purple .contentbox {
+  color: purple;
+}
+
+.text-magenta .contentbox {
+  color: magenta;
+}
+
+.button2 {
+float:center;
+background-color: black;
+  color: red;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  color: yellow;
+}
+
+/* Theme override */
+.overlay {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+    width: 0;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.9);
+  background-color: #E4E9F7;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content{
+  position: relative;
+  top: 8%;
+  width: 100%;
+  margin-top: 30px;
+  text-align: center;
+  color:green;
+  font-size: 18px;
+  display: block;
+  transition: 0.3s;
+  padding:10px;
+}
+
+.overlay-content p{
+padding:16px;
+text-align: center;
+padding-right: 20px;
+}
+
+.overlay-content li{
+text-align:left;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: green;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+.collapsible2 {
+  cursor: pointer;
+  outline: none; 
+  font-size:16px;
+  background-color:cyan;
+  width:100%;
+  text-align:center;
+  color:purple;
+  padding:10px;
+  font-weight: bold;
+  border-style: solid;
+}
+
+.content2 {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: cyan;
+  color: purple;
+  font-weight: bold;
+  text-align:center;
+  font-size: 18px;
+}
+
+.collapsible2 .active {
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL button {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: green;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: green;
+  border: none;
+  color: yellow;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px;
+  width: 350px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL button {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: green;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL button {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: green;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+.collapsible2 {
+  font-size: 15px;
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  font-size: 18px;
+  padding: 12px;
+  color: green;
+  width: 100%
+}
+
+.content2 {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: blue;
+  text-align:center;
+  color: yellow;
+}
+
+/* Directory Content */
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL button {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: green;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+.collapsible3 {
+  background-color: blue;
+  color: yellow;
+  cursor: pointer;
+  padding: 18px;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+  width:100%;
+}
+
+.content3 {
+  padding: 10px;
+  display: none;
+  overflow: hidden;
+  background-color: green;
+  text-align: center;
+  color: yellow;
+}
+
+.dictionary {
+  color: blue;
+  max-width: 400px;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+h1 {
+  margin-top: 0;
+  text-align: center;
+}
+.txtBox {
+  appearance: none;
+  -webkit-appearance:none;
+  font-size:16px;
+  padding: 15px;
+  width:100%;
+}
+.submit-btn {
+  appearance: none;
+  -webkit-appearance:none;
+  padding: 15px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: grey;
+  color: #fff;
+  font-size: 15px;
+  height: 100%;
+}
+form {
+  position: relative;
+}
+.search-result{
+  padding:20px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+</style>
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<h2 style="color: cyan;text-align:center;">Plataforma JstMStudio</h2>
+   <a href="index.html">Inicio</a>
+   <a href="about.html">Acerca de</a>
+   <a href="client.html">Cliente</a>
+   <a href="documentation.html">Documentación</a>
+   <a href="app.html">Aplicación</a>
+</div>
+
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav11()">&times;</a>
+  <div class="overlay-content">
+<h1>Acerca de</h1>
+<p>JstMStudio es un pequeño estudio fundado por Jst Tan. JstMStudio se enfoca en muchas cosas, desde música, escritura de historias, desarrollo de sitios web y mucho más. JstMStudio es un pequeño estudio independiente remoto que se enfoca en muchas cosas para construir un futuro mejor. </p>
+  </div>
+</div>
+
+<div id="myNav1" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
+  <div class="overlay-content">
+    <h1>Contacto</h1>
+     <p>¿Quería ponerse en contacto con JstMStudio? Actualmente, el equipo ofrece múltiples formas para que todos se comuniquen con el equipo. Póngase en contacto con nosotros para obtener información importante, como soporte, comentarios, sugerencias e informes de errores, y no para contenido no importante como el correo no deseado. Somos un equipo pequeño, por lo que es posible que estemos ocupados provocando una respuesta tardía del equipo, así que tenga paciencia. Además, solo respondemos durante nuestro horario comercial oficial.</p>
+     <br>
+     <hr>
+     <br>
+     <h1>Información de contacto oficial<h1>
+     <br>
+       <h3><a href="https://m.me/106374745315761">Mensajero</a></h3>
+       <p>Proporcionamos servicios de contacto de Messenger para que todos los usuarios de Facebook se comuniquen con el equipo de desarrolladores de JstMStudio. Puede contactarnos directamente en Messenger.</p>
+       <br>
+       <h3><a href="https://twitter.com/messages/compose?recipient_id=1496024914431602690">Twitter</a></h3>
+       <p>Para aquellos que usan Twitter, JstMStudio también proporciona servicios de contacto en Twitter. También estamos activos allí.</p>
+
+  </div>
+</div>
+
+<div id="myNav2" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+  <div class="overlay-content">
+<h1>Contribuyendo a JstMStudio</h1>
+<p>Hay muchas cosas con las que podrías ayudar y contribuir a los proyectos de JstMStudio y ayudar al twam. Agradecemos todas y cada una de sus ayudas y contribuciones a nuestros proyectos, sin importar si se trata de un pequeño error tipográfico o un error del equipo.</p>
+<br>
+<hr>
+<br>
+<h2>Informar errores</h2>
+<p>Una forma de contribuir al proyecto sin conocimientos técnicos es informar de los errores al equipo. Si encontró un error en nuestro sitio web o software, cree un problema de Github o envíenos un correo electrónico e infórmelo. Nos ayudaría mucho mejorar nuestro software para que todos pudieran usarlo sin problemas.<br><br>Si pudiera, también podría ayudarnos a solucionar los errores informados cuando aún no los hayamos solucionado. Sin duda, ayudaría mucho al equipo a ahorrar tiempo y esfuerzos para encontrar errores. Después de finalizar la programación, puede enviar una solicitud de incorporación de cambios para que uno de nuestros voluntarios la apruebe e implemente también. </p>
+<br>
+<hr>
+<br>
+<h2>Agregar contenido al software JstMStudio</h2>
+<p>Puedes contribuir al proyecto agregando algún contenido a nuestro software. Puede enviar sitios o proyectos a nuestro motor de búsqueda, agregar videos, música y libros a nuestra biblioteca de contenido para que todos disfruten, etc.</p>
+<br>
+<hr>
+<br>
+<h2>Códigos</h2>
+<p>Si es desarrollador, también podría ayudarnos a mejorar nuestro software, como mejorar nuestra interfaz de usuario, ayudar a desarrollar y crear nuestras próximas funciones y proyectos nuevos con el equipo, etc. También podría ayudar y contribuir a crear más funciones para nuestros servicios actuales.
+  </div>
+</div>
+
+<div id="myNav3" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav3()">&times;</a>
+  <div class="overlay-content">
+<h1>Donar</h1>
+<p>JstMStudio está financiado por personas como usted. No vendemos ningún dato de usuario, no enviamos spam a su pantalla con anuncios ni bloqueamos cosas en el muro de pago. No lo hacemos y creemos que es molesto. Nos financiamos a través de sitios web de venta y donaciones. Si desea apoyar el proyecto, por favor done uno o dos dólares. Puede significar menos para usted, pero significa mucho para nosotros. <br><br>
+Actualmente ofrecemos dos métodos para que todos nos ayuden, apoyen y donen. Puede donarnos a través de <a href="https://www.buymeacoffee.com/jestonjst">Cómprame un café</a> y <a href="https://ko-fi.com/R6R8BLGHG" >Ko-Fi</a>. También puede apoyarnos donando una vez o mensualmente.
+    </p>
+      <br><br>
+      <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="jestonjst" data-color="#40DCA5" data-emoji=""  data-font="Lato" data-text="Buy me a drink" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
+      <br><br>
+      <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#28e032', 'R6R8BLGHG');kofiwidget2.draw();</script> 
+  </div>
+</div>
+
+<div id="myNav4" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav4()">&times;</a>
+  <div class="overlay-content">
+<h1>Preguntas frecuentes</h1>
+<p>Hay muchas preguntas frecuentes de la comunidad de JstMStudio. Explicaríamos todas y cada una de las preguntas aquí. Puede haber posibilidades de que su pregunta que ha estado buscando sea respondida directamente aquí también. Todas las respuestas también habían sido escritas por el equipo. </p>
+<br>
+<hr>
+<br>
+<button type="button" class="collapsible2"><h2>¿Por qué existe JstMStudio?</h2></button>
+<div clase="contenido2">
+   <p>JstMStudio fue fundado por Jst Tan. JstMStudio estaba destinado a vender sitios web por un margen del precio ofrecido por la competencia. </p>
+</div>
+<button type="button" class="collapsible2"><h2>¿Cómo monetiza y financia JstMStudio?</h2></button>
+<div clase="contenido2">
+   <p>JstMStudio se monetiza con toneladas de formas respetuosas con la privacidad, como donaciones, patrocinios, anuncios estáticos, etc. Nos financiamos en gran medida con donaciones realizadas por la comunidad y la venta de sitios web que construimos a nuestros clientes. No bloqueamos ni tenemos intención de bloquear ninguna de nuestras funciones proporcionadas por nosotros detrás de paywall ni vender ningún dato de usuario. </p>
+</div>
+<button type="button" class="collapsible2"><h2>¿Cómo se pronuncia JstMStudio?</h2></button>
+<div clase="contenido2">
+   <p>Escuche los archivos de audio proporcionados por el equipo con el reproductor de audio a continuación para escuchar cómo se pronuncia JstMStudio. El audio se generó a través de un software de texto a voz (TTS) y nadie del equipo lo expresó.</p>
+   <audio controls>
+   <fuente src="pronounce.mp3" type="audio/mpeg">
+Su navegador no es compatible con el elemento de audio.
+</audio>
+    </div>
+    <script>
+    var coll = document.getElementsByClassName("collapsible2");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content2 = this.nextElementSibling;
+    if (content2.style.display === "block") {
+      content2.style.display = "none";
+    } else {
+      content2.style.display = "block";
+    }
+  });
+}
+</script>
+  </div>
+</div>
+
+<div id="myNav5" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav5()">&times;</a>
+  <div class="overlay-content">
+<h1>Artículos de ayuda de JstMStudio</h1>
+   <p style="text-align:center;"><strong>Un lugar para obtener respuestas a artículos de ayuda y códigos de error. Hay muchos códigos de artículos de ayuda proporcionados y utilizados por JstMStudio. Busque sus códigos de error en la barra de búsqueda para buscar información al respecto. </strong></p>
+   <br><br>
+   <table>
+     <tr>
+       <th>Título</th>
+       <th>Códigos</th>
+     </tr>
+     <tr>
+       <td>Cuenta bloqueada</td>
+       <td>13841</td>
+     </tr>
+     <tr>
+       <td>Cuenta eliminada</td>
+       <td>67381</td>
+     </tr>
+     <tr>
+       <td>Cuenta deshabilitada</td>
+       <td>89651</td>
+     </tr>
+     <tr>
+       <td>Cuenta no encontrada</td>
+       <td>10915</td>
+     </tr>
+     <tr>
+       <td>Ajuste de la donación</td>
+       <td>52107</td>
+     </tr>
+     <tr>
+       <td>¿No requería COPPA que cada software fuera 13?</td>
+       <td>98106</td>
+     </tr>
+     <tr>
+       <td>¿Qué hace la donación?</td>
+       <td>61029</td>
+     </tr>
+     <tr>
+       <td>Incrustar</td>
+       <td>92657</td>
+     </tr>
+     <tr>
+       <td>¿Cómo puedo donar?</td>
+       <td>78526</td>
+     </tr>
+       <tr>
+       <td>¿Qué edad se requiere para usar proyectos JstMStudio?</td>
+       <td>23195</td>
+     </tr>
+     <tr>
+       <td>Procesador de pagos</td>
+       <td>89103</td>
+    </tr>
+  </table>
+  <br><br>
+<form class="searchForm">
+<input type="search" class="txtBox">
+<input type="submit" class="submit-btn" value="submit">
+</form>
+ <div class="search-result">
+<h2 class="search-word"></h2>
+<p class="description" style="text-align:center"></p>
+  </div>
+ <script>
+const txtBox = document.querySelector(".txtBox");
+const form = document.querySelector(".searchForm");
+const searchWord = document.querySelector(".search-word");
+const description = document.querySelector(".description");
+const dictionaryJson =
+  "https://new-platform.jstmstudio.tk/English/articles.json";
+function searchDict(e) {
+  e.preventDefault();
+  fetch(dictionaryJson)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      e.preventDefault;
+      let word = txtBox.value;
+      console.log(txtBox.value);
+      let searchKeyword = word.toUpperCase();
+      Object.keys(data).forEach(function(key) {
+        if (key === searchKeyword) {
+          searchWord.innerHTML = searchKeyword;
+          if(searchKeyword === data[key]){
+            description.innerHTML = "Not found";
+          }
+          else{
+             description.innerHTML = data[key];
+          }
+          
+          console.log(data[key]);
+        }
+      });
+    });
+}
+
+form.addEventListener("submit", searchDict);
+
+_.find(allmCar, (mCar) => /XYZ/.test(mCar.value));
+</script>
+  </div>
+</div>
+
+<div id="myNav7" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav7()">&times;</a>
+  <div class="overlay-content">
+  <h1>Extensión</h1>
+       <p>JstMStudio Profile es el primer sitio social que realmente brinda soporte para la extensión en el perfil y las publicaciones de los usuarios. Una extensión es un complemento de software que se instala en un programa, mejorando sus capacidades. Los usuarios pueden elegir entre una variedad de extensiones para usar en su perfil y publicar en la biblioteca de extensiones de perfil de JstMStudio. La extensión JstMStudio Profile está creada por el equipo de personal oficial y la comunidad.<br><br>Los usuarios pueden instalar todos los complementos aquí en su código agregándolos antes de que finalicen los elementos de la publicación o en su perfil. Instale el complemento copiando y pegando el código a continuación.</p>
+       <br>
+       <hr>
+       <br>
+       <h2>Aplauso</h2>
+       <p>Clap es una de las extensiones oficiales del perfil JstMStudio. Podría usarse en la publicación de usuarios del perfil de JstMStudio. Los usuarios pueden aplaudir a las publicaciones de los usuarios cuando se instala este complemento.</p>
+       <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2FOne-Future-Web%2FWeb-App%2Fblob%2F068fa630ef3740efe71dba43dcd938f1395e6fce%2FExtension%2FCodes%2Fclap.html&style =github&showBorder=on&showLineNumbers=on&showCopy=on"></script>
+       <br>
+       <hr>
+       <br>
+       <h2>Comentario</h2>
+       <p>Comment es una de las extensiones oficiales del perfil de JstMStudio. Los usuarios pueden agregarlos a su publicación para que el espectador los comente. Los usuarios también pueden usarlo para obtener comentarios sobre sus publicaciones.</p>
+       <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2FOne-Future-Web%2FWeb-App%2Fblob%2F068fa630ef3740efe71dba43dcd938f1395e6fce%2FExtension%2FCodes%2Fcomment.html&style =github&showBorder=on&showLineNumbers=on&showCopy=on"></script>
+       <br>
+       <hr>
+       <br>
+       <h2>Me gusta</h2>
+       <p>Me gusta es una de las extensiones oficiales del perfil de JstMStudio. Los usuarios pueden agregarlos a su publicación para que el espectador y el escritor muestren su reacción a la publicación. Los usuarios también podrían reaccionar para mostrar su apoyo.</p>
+       <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2FOne-Future-Web%2FWeb-App%2Fblob%2F068fa630ef3740efe71dba43dcd938f1395e6fce%2FExtension%2FCodes%2Flike.html&style =github&showBorder=on&showLineNumbers=on&showCopy=on"></script>
+       <br>
+       <hr>
+       <br>
+       <h2>Compartir</h2>
+       <p>Share es una de las extensiones oficiales del perfil de JstMStudio. Los usuarios pueden agregarlos a su publicación para que el espectador comparta su publicación en las redes sociales. Los usuarios también podrían reaccionar para mostrar su apoyo compartiendo la publicación.</p>
+      <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2FOne-Future-Web%2FWeb-App%2Fblob%2F068fa630ef3740efe71dba43dcd938f1395e6fce%2FExtension%2FCodes%2Fshare.html&style=github&showBorder=on&showLineNumbers=on&showCopy=on"></script>
+      <br>
+      <hr>
+      <br>
+      <h2>Arriba-abajo</h2>
+       <p>Updown es una de las extensiones oficiales del perfil JstMStudio. Los usuarios pueden agregarlos a sus publicaciones para que los espectadores y escritores muestren sus reacciones a la publicación. Los usuarios también podrían reaccionar para mostrar su apoyo. Updown también podría usarse para encuestas.</p>
+      <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2FOne-Future-Web%2FWeb-App%2Fblob%2F068fa630ef3740efe71dba43dcd938f1395e6fce%2FExtension%2FCodes%2Fupdown.html&style=github&showBorder=on&showLineNumbers=on&showCopy=on"></script>  
+  </div>
+</div>
+
+<div id="myNav8" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav8()">&times;</a>
+  <div class="overlay-content">
+  <h1>API</h1>
+<p>JstMStudio proporcionó muchos servicios y características dentro de nuestro software de plataforma, JstMStudio App Platform. JstMStudio API es una interfaz de programación de aplicaciones para la plataforma de aplicaciones JstMStudio que brinda soporte para que todos los desarrolladores implementen servicios como en la plataforma de aplicaciones JstMStudio en su sitio web sin desarrollar las funciones en sí mismos de forma totalmente gratuita y sin tarifas. Está diseñado para que todos lo usen y no para ganar dinero de usuarios como el desarrollador y el propietario del sitio web.</p>
+<p>JstMStudio API es una API de código abierto (interfaz de programación de aplicaciones). Todos podían ver, leer y estudiar todos los códigos fuente de la API de JstMStudio en nuestro repositorio oficial de Github. La API de JstMStudio está construida usando HTML, CSS y JavaScript estándar a diferencia de cualquier API tradicional y tiene licencia bajo AGPL 3.0.</p>
+<button type="button" class="collapsible3">Motor de búsqueda empresarial</button>
+<div clase="content3">
+     <p>Business Search Engine es un servicio proporcionado por JstMStudio en JstMStudio Web App. Puede buscar negocios en JstMStudio Business Search Engine. </p>
+    
+     <p>Para configurar Business Search Engine en su sitio web, inserte todos estos códigos en sus sitios web. Es necesario copiar estos códigos en su sitio para que funcione.</p>
+    
+     <p>Inserte estos códigos en su sección <code>head</code> para que pueda procesar todos los códigos necesarios en nuestros servidores. Es necesario para que funcione, así que no te lo pierdas.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FBusiness%2Fsrc .html&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>Después de eso, inserte estos códigos HTML en su sitio en el que desea que aparezca el motor de búsqueda comercial, insértelo SOLO en la sección <code>cuerpo</code>.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FBusiness%2Fcode .html&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+</div>
+</div>
+
+<button type="button" class="collapsible3">Calculadora</button>
+<div clase="content3">
+     <p>Calculator es un servicio proporcionado por JstMStudio en JstMStudio Web App. Puede calcular matemáticas simples y complejas utilizando la calculadora JstMStudio en su sitio web. </p>
+    
+     <p>Para configurar la Calculadora en su sitio web, inserte todos estos códigos en sus sitios web. Es necesario copiar estos códigos en su sitio para que funcione.</p>
+    
+     <p>Inserte estos códigos en su sección <code>head</code> para que pueda procesar todos los códigos necesarios en nuestros servidores. Es necesario para que funcione, así que no te lo pierdas.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FCalculator%2Fsrc .html&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>Después de eso, inserte estos códigos HTML en su sitio en el que desea que aparezca la calculadora, insértelo SOLO en la sección <code>cuerpo</code>.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FCalculator%2Fcode .html&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+</div>
+</div>
+
+<button type="button" class="collapsible3">Calendario</button>
+<div clase="content3">
+   <h1>Calendario</h1>
+     <p>Calendar es un servicio proporcionado por JstMStudio en JstMStudio Web App. Puede agregar un calendario a su sitio de forma gratuita con JstMStudio Calendar. </p>
+    
+     <p>Para configurar Calendario en su sitio web, inserte todos estos códigos en sus sitios web. Es necesario copiar estos códigos en su sitio para que funcione.</p>
+    
+     <p>Inserte estos códigos en su sección <code>head</code> para que pueda procesar todos los códigos necesarios en nuestros servidores. Es necesario para que funcione, así que no te lo pierdas.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FCalendar%2Fsrc .html&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>Después de eso, inserte estos códigos HTML en su sitio en el que desea que aparezca el calendario, insértelo SOLO en la sección <code>cuerpo</code>.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FCalendar%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+</div>
+</div>
+
+
+<button type="button" class="collapsible3">Cámara</button>
+<div clase="content3">
+     <p>La cámara es un servicio proporcionado por JstMStudio en la aplicación web JstMStudio. Puede agregar una cámara a su sitio de forma gratuita con JstMStudio Camera para que otros puedan tomar fotos directamente en su sitio. </p>
+    
+     <p>Para configurar la cámara en su sitio web, inserte todos estos códigos en sus sitios web. Es necesario copiar estos códigos en su sitio para que funcione.</p>
+    
+     <p>Inserte estos códigos en su sección <code>head</code> para que pueda procesar todos los códigos necesarios en nuestros servidores. Es necesario para que funcione, así que no te lo pierdas.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FCamera%2Fsrc .html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>Después de eso, inserte estos códigos HTML en su sitio en el que desea que aparezca la cámara, insértelo SOLO en la sección <code>cuerpo</code>.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%Main-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FCamera%2Fcode .html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+<button type="button" class="collapsible3">Editor de código</button>
+<div clase="content3">
+<p>Code Editor es un servicio proporcionado por JstMStudio en JstMStudio Web App. Puede agregar un editor de código a su sitio de forma gratuita con JstMStudio Code Editor para que sus usuarios puedan editar sus códigos en su sitio web.</p>
+    
+     <p>Para configurar Code Editor en su sitio web, inserte todos estos códigos en sus sitios web. Es necesario copiar estos códigos en su sitio para que funcione.</p>
+    
+     <p>Inserte estos códigos en su sección <code>head</code> para que pueda procesar todos los códigos necesarios en nuestros servidores. Es necesario para que funcione, así que no te lo pierdas.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FCode%2520Editor %2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>Después de eso, inserte estos códigos HTML en su sitio en el que desea que aparezca el editor de código, insértelo SOLO en la sección <code>cuerpo</code>.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FCode%2520Editor %2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+<button type="button" class="collapsible3">Brújula</button>
+<div clase="content3">
+     <p>Compass es un servicio proporcionado por JstMStudio en JstMStudio Web App. Puede agregar una brújula a su sitio de forma gratuita con JstMStudio Compass. </p>
+    
+     <p>Para configurar Compass en su sitio web, inserte todos estos códigos en sus sitios web. Es necesario copiar estos códigos en su sitio para que funcione.</p>
+    
+     <p>Inserte estos códigos en su sección <code>head</code> para que pueda procesar todos los códigos necesarios en nuestros servidores. Es necesario para que funcione, así que no te lo pierdas.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FCompass%2Fsrc .html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>Después de eso, inserte estos códigos HTML en su sitio en el que desea que aparezca la brújula, insértelo SOLO en la sección <code>cuerpo</code>.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FCompass%2Fcode .html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+<button type="button" class="collapsible3">Contacto</button>
+<div clase="content3">
+     <p>El contacto es un servicio proporcionado por JstMStudio en JstMStudio Web App. Puede agregar un servicio de administración de contactos a su sitio de forma gratuita con JstMStudio Contact. Los usuarios pueden agregar una información de contacto en nuestros servicios para almacenarla y poder recuperar la información de contacto de sus amigos/clientes en el futuro. Todo está almacenado en el almacenamiento local de su navegador, por lo que no estaría disponiblea cualquier otra persona también.</p>
+    
+     <p>Para configurar el contacto en su sitio web, inserte todos estos códigos en sus sitios web. Es necesario copiar estos códigos en su sitio para que funcione.</p>
+    
+     <p>Inserte estos códigos en su sección <code>head</code> para que pueda procesar todos los códigos necesarios en nuestros servidores. Es necesario para que funcione, así que no te lo pierdas.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FContact%2Fsrc .html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>Después de eso, inserte estos códigos HTML en su sitio en el que desea que aparezca el contacto, insértelo SOLO en la sección <code>cuerpo</code>.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FContact%2Fcode .html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+<button type="button" class="collapsible3">Diccionario</button>
+<div clase="content3">
+<p>El diccionario es un servicio proporcionado por JstMStudio en JstMStudio Web App. Puede agregar un diccionario a su sitio de forma gratuita para que los usuarios puedan buscar el significado de una palabra. </p>
+    
+     <p>Para configurar el diccionario en su sitio web, inserte todos estos códigos en sus sitios web. Es necesario copiar estos códigos en su sitio para que funcione.</p>
+    
+     <p>Inserte estos códigos en su sección <code>head</code> para que pueda procesar todos los códigos necesarios en nuestros servidores. Es necesario para que funcione, así que no te lo pierdas.</p>
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FDictionary%2Fsrc .html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     <p>Después de eso, inserte estos códigos HTML en su sitio en el que desea que aparezca el diccionario, insértelo SOLO en la sección <code>cuerpo</code>.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FDictionary%2Fcode .html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+<button type="button" class="collapsible3">Traductor de idiomas</button>
+<div clase="content3">
+     <p>El traductor de idiomas es un servicio proporcionado por JstMStudio en la aplicación web JstMStudio. Puede agregar un traductor de idiomas a su sitio de forma gratuita para que todos puedan traducir el texto directamente en su sitio. </p>
+    
+     <p>Para configurar el traductor de idiomas en su sitio web, inserte todos estos códigos en sus sitios web. Es necesario copiar estos códigos en su sitio para que funcione.</p>
+    
+     <p>Inserte estos códigos en su sección <code>head</code> para que pueda procesar todos los códigos necesarios en nuestros servidores. Es necesario para que funcione, así que no te lo pierdas.</p>
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FLanguage%2520Translator %2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     <p>Después de eso, inserte estos códigos HTML en su sitio en el que desea que aparezca el traductor de idiomas, insértelo SOLO en la sección <code>cuerpo</code>.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FLanguage%2520Translator %2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+   </div>
+
+<button type="button" class="collapsible3">Mapa</button>
+<div clase="content3">
+<p>Map es un servicio proporcionado por JstMStudio en JstMStudio Web App. Puede agregar un mapa a su sitio de forma gratuita. </p>
+    
+     <p>Para configurar el mapa en su sitio web, inserte todos estos códigos en sus sitios web. Es necesario copiar estos códigos en su sitio para que funcione.</p>
+    
+     <p>Inserte estos códigos en su sección <code>head</code> para que pueda procesar todos los códigos necesarios en nuestros servidores. Es necesario para que funcione, así que no te lo pierdas.</p>
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FMap%2Fsrc .html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     <p>Después de eso, inserte estos códigos HTML en su sitio en el que desea que aparezca el mapa, insértelo en el <cosección de>body</code> SOLAMENTE.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2JstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FMap%2Fcode .html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+<button type="button" class="collapsible3">Notas</button>
+<div clase="content3">
+<p>Notas es un servicio proporcionado por JstMStudio en JstMStudio Web App. Puede agregar notas en su sitio de forma gratuita para que todos puedan agregar notas directamente en su sitio. </p>
+    
+     <p>Para configurar notas en su sitio web, inserte todos estos códigos en sus sitios web. Es necesario copiar estos códigos en su sitio para que funcione.</p>
+    
+     <p>Inserte estos códigos en su sección <code>head</code> para que pueda procesar todos los códigos necesarios en nuestros servidores. Es necesario para que funcione, así que no te lo pierdas.</p>
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FNotes%2Fsrc .html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     <p>Después de eso, inserte estos códigos HTML en su sitio en el que desea que aparezcan las notas, insértelo SOLO en la sección <code>cuerpo</code>.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FNotes%2Fcode .html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+   </div>
+
+<button type="button" class="collapsible3">Editor de fotos</button>
+<div clase="content3">
+     <p>Photo Editor es un servicio proporcionado por JstMStudio en JstMStudio Web App. Puede editar la foto en Photo Editor. Photo Editor también es compatible con nuestra API gratuita para que todos puedan usarlo en su sitio. </p>
+     <p>Para configurar el editor de fotos en su sitio web, inserte todos estos códigos en sus sitios web. Es necesario copiar estos códigos en su sitio para que funcione.</p>
+     <p>Inserte estos códigos en su sección <code>head</code> para que pueda procesar todos los códigos necesarios en nuestros servidores. Es necesario para que funcione, así que no te lo pierdas.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FPhoto%2520Editor %2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>Después de eso, inserte estos códigos HTML en su sitio en el que desea que aparezca el editor de fotos, insértelo SOLO en la sección <code>cuerpo</code>.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FPhoto%2520Editor %2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+</div>
+</div>
+
+<button type="button" class="collapsible3">Almacenamiento de fotos</button>
+<div clase="content3">
+<p>El almacenamiento de fotos es un servicio proporcionado por JstMStudio en la aplicación web JstMStudio. Puede cargar y almacenar sus imágenes en Photo Storage. Photo Storage también es compatible con nuestra API gratuita para que todos puedan usarlo en su sitio. </p>
+     <p>Para configurar el almacenamiento de fotos en su sitio web, inserte todos estos códigos en sus sitios web. Es necesario copiar estos códigos en su sitio para que funcione.</p>
+     <p>Inserte estos códigos en su sección <code>head</code> para que pueda procesar todos los códigos necesarios en nuestros servidores. Es necesario para que funcione, así que no te lo pierdas.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FPhoto%2520Storage %2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>Después de eso, inserte estos códigos HTML en su sitio en el que desea que aparezca el almacenamiento de fotos, insértelo SOLO en la sección <code>cuerpo</code>.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FPhoto%2520Storage %2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+<button type="button" class="collapsible3">Generador de códigos QR</button>
+<div clase="content3">
+<p>El generador de código QR es un servicio proporcionado por JstMStudio en la aplicación web JstMStudio. Puede generar código QR en QR Code Generator. QR Code Generator también es compatible con nuestra API gratuita para que todos puedan usarlo en su sitio. </p>
+     <p>Para configurar el generador de códigos qr en su sitio web, inserte todos estos códigos en sus sitios web. Es necesario copiar estos códigos en su sitio para que funcione.</p>
+     <p>Inserte estos códigos en su sección <code>head</code> para que pueda procesar todos los códigos necesarios en nuestros servidores. Es necesario para que funcione, así que no te lo pierdas.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FQR%2520Code %2520Generator%2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>Después de eso, inserte estos códigos HTML en su sitio en el que desea que aparezca el generador de códigos QR, insértelo SOLO en la sección <code>cuerpo</code>.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FQR%2520Code %2520Generator%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+</div>
+
+<button type="button" class="collapsible3">Lector de códigos QR</button>
+<div clase="content3">
+     <h1>Lector de códigos QR</h1>
+     <p>Lector de código QR es un servicio proporcionado por JstMStudio en JstMStudio Web App. Puede leer el código QR en el lector de códigos QR. QR Code Reader también es compatible con nuestra API gratuita para que todos puedan usarlo en su sitio. </p>
+     <p>Para configurar el lector de código qr en su sitio web, inserte todos estos códigos en sus sitios web. Es necesario copiar estos códigos en su sitio para que funcione.</p>
+     <p>Inserte estos códigos en su sección <code>head</code> para que pueda procesar todos los códigos necesarios en nuestros servidores. Es necesario para que funcione, así que no te lo pierdas.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FQR%2520Code %2520Reader%2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>Después de eso, inserte estos códigos HTML en su sitio en el que desea que aparezca el lector de códigos QR, insértelo SOLO en la sección <code>cuerpo</code>.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FQR%2520Code %2520Reader%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+   </div>
+  
+   <button type="button" class="collapsible3">Reseñas</button>
+<div clase="content3">
+<p>Revisiones es un servicio proporcionado por JstMStudio en JstMStudio Web App. Puede agregar reseñas en su sitio de forma gratuita para que los usuarios puedan buscar reseñas de productos directamente en su sitio. </p>
+    
+     <p>Para configurar la revisión en su sitio web, inserte todos estos códigos en sus sitios web. Es necesario copiar estos códigos en su sitio para que funcione.</p>
+    
+     <p>Inserte estos códigos en su sección <code>head</code> para que pueda procesar todos los códigos necesarios en nuestros servidores. Es necesario para que funcione, así que no te lo pierdas.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FReviews%2Fsrc .html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>Después de eso, inserte estos códigos HTML en su sitio en el que desea que aparezcan las reseñas, insértelo SOLO en la sección <code>cuerpo</code>.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FReviews%2Fcode .html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+   <button type="button" class="collapsible3">Motor de búsqueda</button>
+<div clase="content3">
+     <p>La búsqueda es un servicio proporcionado por JstMStudio en JstMStudio Web App. Puede agregar un motor de búsqueda en su sitio de forma gratuita para que los usuarios puedan buscar en Internet de forma gratuita en su sitio web. </p>
+    
+     <p>Para configurar la búsqueda en su sitio web, inserte todos estos códigos en sus sitios web. Es necesario copiar estos códigos en su sitio para que funcione.</p>
+    
+     <p>Inserte estos códigos en su sección <code>head</code> para que pueda procesar todos los códigos necesarios en nuestros servidores. Es necesario para que funcione, así que no te lo pierdas.</p>
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FSearch%2Fsrc .html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>Después de eso, inserte estos códigos HTML en su sitio en el que desea que aparezca el motor de búsqueda, insértelo SOLO en la sección <code>cuerpo</code>.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FSearch%2Fcode .html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+   <button type="button" class="collapsible3">Acciones</button>
+<div clase="content3">
+     <p>Stocks es un servicio proporcionado por JstMStudio en JstMStudio Web App. Puede agregar acciones a su sitio de forma gratuita para que los usuarios puedan obtener información de acciones en vivo directamente en su sitio. </p>
+    
+     <p>Para configurar existencias en su sitio web, inserte todos estos códigos en sus sitios web. Es necesario copiar estos códigos en su sitio para que funcione.</p>
+    
+     <p>Inserte estos códigos HTML en su sitio en el que desea que aparezcan las reseñas, insértelo SOLO en la sección <code>cuerpo</code>.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FStocks%2Fcode .html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+   <button type="button" class="collapsible3">Editor de texto</button>
+<div clase="content3">
+     <p>Text Editor es un servicio proporcionado por JstMStudio en JstMStudio Web App. Puede editar texto en el Editor de texto. El editor de texto también es compatible con nuestra API gratuita para que todos puedan usarlo en su sitio. </p>
+     <p>Para configurar el editor de texto en su sitio web, inserte todos estos códigos en sus sitios web. Es necesario copiar estos códigos en su sitio para que funcione.</p>
+     <p>Inserte estos códigos en su sección <code>head</code> para que pueda procesar todos los códigos necesarios en nuestros servidores. Es necesario para que funcione, así que no te lo pierdas.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FText%2520Editor %2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>Después de eso, inserte estos códigos HTML en su sitio en el que desea que aparezca el editor de texto, insértelo SOLO en la sección <code>cuerpo</code>.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FText%2520Editor %2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+   <button type="button" class="collapsible3">Texto a voz</button>
+<div clase="content3">
+<p>Text to Speech es un servicio proporcionado por JstMStudio en JstMStudio Web App. Puede enviar texto a voz en Texto a voz. Text to Speech también es compatible con nuestra API gratuita para que todos puedan usarlo en su sitio. </p>
+     <p>Para configurar Text to Speech en su sitio web, inserte todos estos códigos en sus sitios web. Es necesario copiar estos códigos en su sitio para que funcione.</p>
+     <p>Inserte estos códigos en su sección <code>head</code> para que pueda procesar todos los códigos necesarios en nuestros servidores. Es necesario para que funcione, así que no te lo pierdas.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FText%2520To %2520Voz%2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>Después de pegar el código anterior. inserte el código donde desea que aparezca el texto a voz. Insértelo SOLO en la sección <code>body</code>.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FText%2520To %2520Voz%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+   <button type="button" class="collapsible3">Por hacer</button>
+<div clase="content3">
+<p>To Do es un servicio proporcionado por JstMStudio en JstMStudio Web App. Puede enumerar toda su lista de tareas pendientes en To Do. To Do también es compatible con nuestra API gratuita para que todos puedan usarlo en su sitio. </p>
+     <p>Para configurar To Do en su sitio web, inserte todos estos códigos en sus sitios web. Es necesario copiar estos códigos en su sitio para que funcione.</p>
+     <p>Inserte estos códigos en su <code>heasección d</code> para que pueda proceder con todos los códigos necesarios en nuestros servidores. Es necesario para que funcione, así que no te lo pierdas.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FTo%2520Do %2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>Después de eso, inserte estos códigos HTML en su sitio en el que desea que aparezca, insértelo SOLO en la sección <code>cuerpo</code>.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FTo%2520Do %2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+   <button type="button" class="collapsible3">Tiempo</button>
+<div clase="content3">
+<p>El tiempo es un servicio proporcionado por JstMStudio en JstMStudio Web App. Puede consultar el clima más reciente desde cualquier lugar del mundo en Weather. El clima también es compatible con nuestra API gratuita para que todos puedan usarlo en su sitio. </p>
+     <p>Para configurar Weather en su sitio web, inserte todos estos códigos en sus sitios web. Es necesario copiar estos códigos en su sitio para que funcione.</p>
+     <p>Inserte estos códigos en su sección <code>head</code> para que pueda procesar todos los códigos necesarios en nuestros servidores. Es necesario para que funcione, así que no te lo pierdas.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FWeather%2Fsrc .html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>Después de eso, inserte estos códigos HTML en su sitio en el que desea que aparezca el clima, insértelo SOLO en la sección <code>cuerpo</code>.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FWeather%2Fcode .html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+   <button type="button" class="collapsible3">Pizarra</button>
+<div clase="content3">
+<p>Whiteboard es un servicio proporcionado por JstMStudio en JstMStudio Web App. Podrías dibujar en tu navegador con Whiteboard. Whiteboard también es compatible con nuestra API gratuita para que todos puedan usarla en su sitio. </p>
+     <p>Para configurar Whiteboard en su sitio web, inserte todos estos códigos en sus sitios web. Es necesario copiar estos códigos en su sitio para que funcione.</p>
+     <p>Inserte estos códigos en su sección <code>head</code> para que pueda procesar todos los códigos necesarios en nuestros servidores. Es necesario para que funcione, así que no te lo pierdas.</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FWhiteboard%2Fsrc .html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>Después de eso, inserte estos códigos HTML en su sitio en el que desea que aparezca la pizarra, insértelo SOLO en la sección <code>cuerpo</code>.</p>
+    <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FWhiteboard%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script> 
+  </div>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible3");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content3 = this.nextElementSibling;
+    if (content3.style.display === "block") {
+      content3.style.display = "none";
+    } else {
+      content3.style.display = "block";
+    }
+  });
+}
+</script>
+</div>
+</div>
+
+<div id="main">
+  <div class="contentbox">
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()" style="" class="navbutton">&#9776;</span>
+  <br><br>
+<h1>Documentación de JstMStudio</h1>
+<p>¡Hola! ¡Bienvenido a la documentación de JstMStudio! Un lugar para obtener algunos artículos útiles y todo lo que necesita para usar, contribuir al proyecto, etc., escrito con orgullo por nuestro equipo. Puede encontrar muchos artículos útiles aquí que podrían ayudarlo con su pregunta. Lea todos los artículos aquí antes de ponerse en contacto con nosotros para obtener asistencia. Podríamos redirigirte aquí.</p>
+
+<br>
+<hr>
+<br>
+<h2>Artículos</h2>
+	  <div class="dropdown">
+  <button class="dropbtn">All Pages <i class='bx bxs-caret-down-circle'></i></button>
+  <div class="dropdown-content">
+  <a onclick="openNav11()">Acerca De</a>
+  <a onclick="openNav1()">Contacto</a>
+  <a onclick="openNav2()">Contribuyendo</a>
+  <a onclick="openNav3()">Donación</a>
+  <a onclick="openNav4()">Preguntas frecuentes</a>
+  <a onclick="openNav5()">Artículos de ayuda</a>
+  <a onclick="openNav7()">Extensión de perfil</a>
+  <a onclick="openNav8()">API</a>
+  </div>
+</div>
+<br>
+<script>
+function openNav11() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav11() {
+  document.getElementById("myNav").style.width = "0%";
+}
+
+function openNav1() {
+  document.getElementById("myNav1").style.width = "100%";
+}
+
+function closeNav1() {
+  document.getElementById("myNav1").style.width = "0%";
+}
+
+function openNav2() {
+  document.getElementById("myNav2").style.width = "100%";
+}
+
+function closeNav2() {
+  document.getElementById("myNav2").style.width = "0%";
+}
+
+function openNav3() {
+  document.getElementById("myNav3").style.width = "100%";
+}
+
+function closeNav3() {
+  document.getElementById("myNav3").style.width = "0%";
+}
+
+function openNav4() {
+  document.getElementById("myNav4").style.width = "100%";
+}
+
+function closeNav4() {
+  document.getElementById("myNav4").style.width = "0%";
+}
+
+function openNav5() {
+  document.getElementById("myNav5").style.width = "100%";
+}
+
+function closeNav5() {
+  document.getElementById("myNav5").style.width = "0%";
+}
+
+function openNav6() {
+  document.getElementById("myNav6").style.width = "100%";
+}
+
+function closeNav6() {
+  document.getElementById("myNav6").style.width = "0%";
+}
+
+function openNav7() {
+  document.getElementById("myNav7").style.width = "100%";
+}
+
+function closeNav7() {
+  document.getElementById("myNav7").style.width = "0%";
+}
+
+function openNav8() {
+  document.getElementById("myNav8").style.width = "100%";
+}
+
+function closeNav8() {
+  document.getElementById("myNav8").style.width = "0%";
+}
+</script>
+  </div>
+</div>
+
+<button type="button" class="collapsible" style="margin-top:60px;"><h3>&#9776; Personalización del tema</h3></button>
+<div clase="content">
+<p>Color del texto</p>
+<button onclick="myFunction11()" style="background-color: black;" class="button2"></button>
+<button onclick="myFunction12()" style="background-color: red;" class="button2"></button>
+<button onclick="myFunction13()" style="background-color: blue;" class="button2"></button>
+<button onclick="myFunction14()" style="background-color: green;" class="button2"></button>
+<button onclick="myFunction15()" style="background-color: yellow;" class="button2"></button>
+<button onclick="myFunction16()" style="background-color: orange;" class="button2"></button>
+<button onclick="myFunction17()" style="background-color: purple;" class="button2"></button>
+<button onclick="myFunction18()" style="background-color: magenta;" class="button2"></button>
+<br>
+<br>
+    <p>Temas de fondo</p>
+<button onclick="myFunction()" style="background-color: black;" class="button2"></button>
+<button onclick="myFunction2()" style="background-color: red;" class="button2"></button>
+<button onclick="myFunction3()" style="background-color: blue;" class="button2"></button>
+<button onclick="myFunction4()" style="background-color: green;" class="button2"></button>
+<button onclick="myFunction5()" style="background-color: yellow;" class="button2"></button> 
+<button onclick="myFunction6()" style="background-color: orange;" class="button2"></button>
+<button onclick="myFunction7()" style="background-color: purple;" class="button2"></button>
+<button onclick="myFunction8()" style="background-color: magenta;" class="button2"></button>
+</div>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+
+function myFunction2() {
+   var element = document.body;
+   element.classList.toggle("red-mode");
+}
+
+function myFunction3() {
+   var element = document.body;
+   element.classList.toggle("blue-mode");
+}
+
+function myFunction4() {
+   var element = document.body;
+   element.classList.toggle("green-mode");
+}
+
+function myFunction5() {
+   var element = document.body;
+   element.classList.toggle("yellow-mode");
+}
+
+function myFunction6() {
+   var element = document.body;
+   element.classList.toggle("orange-mode");
+}
+
+function myFunction7() {
+   var element = document.body;
+   element.classList.toggle("purple-mode");
+}
+
+function myFunction8() {
+   var element = document.body;
+   element.classList.toggle("magenta-mode");
+}
+  
+function myFunction11() {
+   var element = document.body;
+   element.classList.toggle("text-black");
+}  
+
+function myFunction12() {
+   var element = document.body;
+   element.classList.toggle("text-red");
+}  
+
+function myFunction13() {
+   var element = document.body;
+   element.classList.toggle("text-blue");
+}  
+
+function myFunction14() {
+   var element = document.body;
+   element.classList.toggle("text-green");
+}  
+
+function myFunction15() {
+   var element = document.body;
+   element.classList.toggle("text-yellow");
+}  
+
+function myFunction16() {
+   var element = document.body;
+   element.classList.toggle("text-orange");
+}  
+
+function myFunction17() {
+   var element = document.body;
+   element.classList.toggle("text-purple");
+}  
+
+function myFunction18() {
+   var element = document.body;
+   element.classList.toggle("text-magenta");
+}  
+</script>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "100%";
+  document.getElementById("main").style.marginLeft = "100%";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+  
+  <script src="https://swetrix.org/swetrix.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    swetrix.init('13a2nGRC9iGh')
+    swetrix.trackViews()
+  })
+</script>
+<noscript>
+  <img
+    src="https://api.swetrix.com/log/noscript?pid=bbS0szbjjP2r"
+    alt=""
+    referrerpolicy="no-referrer-when-downgrade"
+  />
+</noscript>
+   
+</body>
+</html> 

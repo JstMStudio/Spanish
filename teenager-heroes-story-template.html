@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta name="robots" content="noindex">
+    <title>Plantilla de historia</title>
+    <style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: purple;
+  width: 30%;
+  height: 100%;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: darkblue;
+  color: #f66eae;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #065408;
+  color: yellow;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #37f93e;
+  color: purple;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 14px;
+  border: 1px solid #ccc;
+  width: 70%;
+  border-left: none;
+  height: 322px;
+  background-color: lightgreen;
+  color: purple;
+  text-align: center;
+  font-weight: bold;
+}
+
+body {
+text-align: center;
+color: green;
+}
+    </style>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+<h1>Título de la historia</h1>
+<p><strong>Descripción de la historia</strong></p>
+<br>
+<div style="text-align:left;">
+<li>Licencias: (CC) Atrib. No comercial</li>
+<li>Tiempo de lectura: (200 palabras por minuto)</li>
+<li>Partes: </li>
+<li>Visualizaciones:</li>
+</div>
+<br>
+<hr>
+<br>
+<h2>Lector de historias</h2>
+<div clase="tab">
+   <button class="tablinks" onclick="openCity(event, 'Part1')" id="defaultOpen">Parte 1</button>
+   <button class="tablinks" onclick="openCity(event, 'Part2')">Parte 2</button>
+   <button class="tablinks" onclick="openCity(event, 'Part3')">Parte 3</button>
+  <button class="tablinks" onclick="openCity(event, 'Part4')">Parte 4</button>
+  <button class="tablinks" onclick="openCity(event, 'Part5')">Parte 5</button>
+</div>
+
+<div id="Parte1" clase="contenido de tabulación">
+   <h1>Parte 1</h1>
+   <p></p>
+</div>
+
+<div id="Parte2" clase="contenido de tabulación">
+   <h1>Parte 2</h1>
+   <p></p>
+</div>
+
+<div id="Part3" class="tabcontent">
+   <h1>Parte 3</h1>
+   <p></p>
+</div>
+
+<div id="Part4" class="tabcontent">
+   <h1>Parte 4</h1>
+   <p></p>
+</div>
+
+<div id="Part5" class="tabcontent">
+   <h1>Parte 5</h1>
+   <p></p>
+</div>
+
+<br><br><br><br><br><br><br><br>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+  
+  <script src="https://swetrix.org/swetrix.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    swetrix.init('13a2nGRC9iGh')
+    swetrix.trackViews()
+  })
+</script>
+<noscript>
+  <img
+    src="https://api.swetrix.com/log/noscript?pid=bbS0szbjjP2r"
+    alt=""
+    referrerpolicy="no-referrer-when-downgrade"
+  />
+</noscript>
+
+</body>
+</html>
