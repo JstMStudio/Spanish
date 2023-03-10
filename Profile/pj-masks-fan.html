@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>PJ Masks Fan </title>
+    <style>
+
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: blue;
+  width: 30%;
+  height: 100%;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: yellow;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: green;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 12px 12px;
+  border: 1px solid #ccc;
+  width: 70%;
+  border-left: none;
+  height: 2000px;
+  display: none;
+  text-align:center;
+  color: cyan;
+  background-color: darkblue;
+}
+
+/* Clear floats after the tab */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-image {
+  background-image: url("https://i.ibb.co/7CjX2gB/PJ-Masks-banner.png");
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+}
+
+.hero-text {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: orange;
+  text-align:center;
+}
+
+.hero-text button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  cursor: pointer;
+  text-align: center;
+}
+
+.hero-text button:hover {
+  background-color: #555;
+  color: white;
+}
+
+.collapsible1 {
+  background-color: blue;
+  color: cyan;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+
+.content1 {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: yellow;
+  color: red;
+  text-align: center;
+}
+
+.content1 ul {
+text-align: left;
+}
+    </style>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+<div class="hero-image">
+  <img src="https://i.ibb.co/1RH0km2/PJ-Masks.jpg" style="width:150px;height:150px;">
+  <div class="hero-text" style="float:center;height:150px;text-align;center;">
+  <h1 style="color:red;">Las máscaras de PJ salvan el día</h1>
+  <h2 style="color:cyan;">Viendo PJ Masks</h2>
+  <h2 style="color:magenta;"><i class='bx bx-ubicación-plus'></i> EE. UU.</h2>
+  </div>
+  </div>
+  <br>
+  <hr>
+<br><br>
+<div clase="tab">
+  <button class="tablinks" onmouseover="openCity(evento, 'Profile')" id="perfil"><a href="#perfil" style="color:yellow;">Perfil</a></button>
+  <button class="tablinks" onmouseover="openCity(evento, 'Community')" id="comunidad"><a href="#comunidad" style="color:yellow;">Comunidad</a></button>
+  <button class="tablinks" onmouseover="openCity(evento, 'Social')" id="social"><a href="#social" style="color:yellow;">Social</a></button>
+  <button class="tablinks" onmouseover="openCity(evento, 'Uploads')" id="cargas"><a href="#cargas" style="color:yellow;">Cargas</a></button>
+    <button class="tablinks" onmouseover="openCity(evento, 'InfoHQ')" id="infohq"><a href="../infohq.html#PJMasks" style="color:yellow;">InfoHQ</a></button>
+</div>
+
+<div id="Profile" class="tabcontent">
+<br>
+<h1>Sobre nosotros</h1>
+  <p>Una cuenta para todo el contenido de PJ Masks en el sitio web de JstMStudio. Una cuenta que sube todo el contenido relacionado con los PJ Masks. Esta cuenta es generada y mantenida por JstMStudio.<br><br>Durante el día, Amaya, Connor y Greg llevan vidas totalmente normales, pero se transforman en superhéroes durante la noche y usan sus poderes para luchar contra villanos y resolver misterios.</ p>
+  <br><br>
+  <p>PJ Masks Save The Day es una comunidad multiplataforma de PJ Masks, que tiene como objetivo formar comunidades familiares por fanáticos de PJ Masks de cada parte del mundo e Internet. Una comunidad de fanáticos reales de PJ Masks que aman el programa y querían discutir sobre el programa, el personaje, los episodios, la temporada, la ubicación, etc. en varias plataformas en Revolt, Guilded, Facebook, Messenger, etc.</p>
+  <br>
+  <hr style="width:40%;margin: auto;">
+  <br>
+  <h2>Educación</h2>
+  <li>Ninguno</li>
+  <br>
+  <hr style="width:40%;margin: auto;">
+  <br>
+  <h2>Información de contacto</h2>
+  <li>Ninguno</li>
+  <br>
+  <hr style="ancho:40%;margen: automático;">
+  <br>
+  <h2>Redes sociales</h2>
+  <i class='bx bxl-facebook-circle' ></i> Facebook
+  <br>
+  <i class='bx bxl-instagram' ></i> Instagram
+  <br>
+  <i class='bx bxl-twitter' ></i> Twitter
+  <br>
+  <i class='bx bxl-mastodon' ></i> Mastodonte
+  <br>
+  <i class='bx bxl-youtube' ></i> YouTube
+  <br><br>
+  <hr style="width:40%;margin: auto;">
+  <br>
+  <h2>Contacto</h2>
+  <p>¡Hola, fan de PJ Masks! En la lista a continuación, proporcionamos todos los detalles de contacto de los administradores de PJ MASKS que salvan el día. Utilice los métodos de contacto a continuación para comunicarse directamente con el administrador de PJ MASKS save the day.</p>
+  <br>
+<li><h3>Jestón</h3>
+<li>Revuelta: @Jst_Tan</li>
+<li><a href="https://www.guilded.gg/profile/Qd5XEDk4" style="color:cian;">Gremio: @Jeston</a></li>
+<li><a href="https://www.facebook.com/jeston.tan.21" style="color:cian;">Facebook: Jeston Tan</a></li>
+<br>
+<li><h3>Christian De Vita (solo administrador de grupo de FB)</h3>
+<li><a href="https://www.facebook.com/christiandevita73" style="color:cian;">Facebook: Christian De Vita</a></li>
+  <br><br>
+  <hr style="width:40%;margin: auto;">
+  <br>
+  <h2>Miembros de la familia</h2>
+  <li>Ninguno</li>
+  <br>
+  <hr style="width:40%;margin: auto;">
+  <br>
+  <h2>Idiomas</h2>
+  <li>Inglés</li>
+  <li>francés</li>
+  <br>
+</div>
+
+<div id="Community" class="tabcontent">
+<br>
+<h1>Comunidad</h1>
+<p>PJ Masks Save The Day actualmente muchas comunidades en múltiples plataformas, mantenidas por los administradores de PJ MASKS save the day, Jeston con el grupo principal de Facebook con Christian De Vita.</p>
+<br><br>
+<p>PJ MASKS Save The Day es una comunidad de fanáticos de PJ Masks que se reúnen para formar una comunidad de PJ Masks en una plataforma. PJ Masks save the day está interconectado entre sí para que los miembros puedan unirse y descubrirse fácilmente.</p>
+<br>
+<h4>Plataformas</h4>
+<ul>
+<li><a href="https://www.facebook.com/groups/pjmaskssavetheday" style="color:cyan;">Grupo de Facebook de PJ MASKS para salvar el día</a></li>
+<li><a href="https://app.revolt.chat/invite/Ysks203X" style="color:cyan;">Servidor PJ Masks Revolt</a></li>
+<li>Grupo de Mensajeros de Tarabiscoville</li>
+<li><a href="https://www.guilded.gg/teams/1EDQPenj/overview" style="color:cyan;">Servidor de PJ Masks Guilded</a></li>
+</ul>
+  <br>
+  <hr>
+  <br>
+  <h2>Sección de comentarios</h2>
+  <div id="graphcomment"></div>
+<script tipo="texto/javascript">
+  /* - - - CONFIGURATION VARIABLES - - - */
+
+  var __semio__params = {
+    graphcommentId: "Official-Websites", // make sure the id is yours
+
+    behaviour: {
+      // HIGHLY RECOMMENDED
+      //  uid: "PJ Masks Profile", // uniq identifer for the comments thread on your page (ex: your page id)
+    },
+
+    // configure your variables here
+
+  }
+
+  /* - - - DON'T EDIT BELOW THIS LINE - - - */
+
+  function __semio__onload() {
+    __semio__gc_graphlogin(__semio__params)
+  }
+
+
+  (function() {
+    var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
+    gc.onload = __semio__onload; gc.defer = true; gc.src = 'https://integration.graphcomment.com/gc_graphlogin.js?' + Date.now();
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
+  })();
+</script>
+<br>
+</div>
+
+<div id="Social" class="tabcontent">
+<br>
+<h1>Social</h1>
+  <p>¡Bienvenido a las redes sociales de PJ Masks! Un lugar para ver todas las publicaciones hechas por fanáticos de PJ Masks. Un lugar para obtener adelantos, anuncios, noticias y actualizaciones de PJ Masks. </p>
+  <br>
+  <hr>
+  <br>
+  <h2>Publicaciones</h2>
+  <br>
+  <div style="background-color:yellow;padding:16px;color:blue;">
+        <h3 id="powerheroespost"><a href="#powerheroespost">PJ Masks: Héroes poderosos</a></h3>
+    <p>¡Hola a todos! Soy Jst Tan. Hoy, me gustaría anunciar una buena noticia, ¡el anuncio oficial de la Temporada 6 de PJ Masks, del Festival Internacional de Cine de Animación de Annecy!</p>
+<br>
+<p>La temporada 6 de PJ Masks tendrá un nuevo nombre, PJ Masks: Power Heroes y también un nuevo logotipo. PJ Masks: Power Heroes contará con los íconos preescolares Catboy, Gekko y Owlette mientras se les une un equipo de lucha contra el crimen ampliado para enfrentar desafíos aún mayores en una serie completamente nueva.</p>
+<br>
+<p>PJ Masks: Power Heroes también presenta aspectos completamente nuevos, como ubicaciones, específicamente un nuevo planeta y un desierto helado, y personajes. PJ Masks: Power Heroes también contará con más especiales, específicamente 3 episodios de 44 minutos y 6 episodios de media hora. </p>
+<br>
+<p>PJ Masks: Power Heroes está programado para estrenarse en 2023. Se confirmó oficialmente por primera vez el 18 de junio de 2022, aunque se reveló temprano a algunos en abril y mayo de 2022. </p>
+<br>
+<p>Eso es todo sobre PJ Masks: Power Heroes que sabemos hasta ahora, pero pronto se publicará más información. ¡Manténganse al tanto! No tenía nada más que decir, así que nos vemos en la próxima publicación del blog. Espero que lo hayan pasado bien y tengan paciencia mientras esperan PJ Masks: Power Heroes. Adiós por ahora. </p><br>
+        <!--- Cambie esto al texto o descripción de su publicación --->
+        <hr style="width:40%;text-align:center;margin-left:auto;margin-right:auto;">
+        <div data-lyket-type="like" data-lyket-namespace="template" data-lyket-id="a todos les gusta ahora" data-lyket-color="cyan" />
+        <button onclick="copyToClipboard()">Copiar enlace</button>
+        <script src="https://unpkg.com/@lyket/widget@latest/dist/lyket.js?apiKey=pt_eb09eedd724c781b92b6e026928ca4"></script>
+
+        <script>
+        function copyToClipboard(text) {
+            var inputc = document.body.appendChild(document.createElement("input"));
+            inputc.value = window.location.href;
+            inputc.focus();
+            inputc.select();
+            document.execCommand('copy');
+            inputc.parentNode.removeChild(inputc);
+            alert("URL Copied.");
+        }
+        </script>
+        </div>
+        </div>
+<br>
+</div>
+
+<div id="Uploads" class="tabcontent">
+<br>
+<h1>Subidas</h1>
+  <p>¡Bienvenido a las cargas de fans de PJ Masks! Un lugar para ver todas las cargas realizadas por PJ Masks Fan a las plataformas JstMStudio. Un lugar para ver todos los contenidos subidos y realizados por JstMStudio. </p>
+  <br>
+  <hr>
+  <br>
+  <h2>Libros</h2>
+  <ul>
+  <li>Ejemplo</li>
+  <li>Ejemplo</li>
+  </ul>
+  <br>
+  <hr>
+  <br>
+  <h2>Vídeo</h2>
+  <ul>
+  <li>Ejemplo</li>
+  <li>Ejemplo</li>
+  </ul>
+  <br>
+</div>
+
+<div class="clearfix"></div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+  
+  <script src="https://swetrix.org/swetrix.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    swetrix.init('13a2nGRC9iGh')
+    swetrix.trackViews()
+  })
+</script>
+<noscript>
+  <img
+    src="https://api.swetrix.com/log/noscript?pid=bbS0szbjjP2r"
+    alt=""
+    referrerpolicy="no-referrer-when-downgrade"
+  />
+</noscript>
+
+</body>
+</html>
