@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vehicles</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+font-family: Arial;
+padding: 15px;
+background-color: #00C9A7;
+background-image: url("https://github.com/JstMStudio/Teenager-Heroes/blob/Github-Pages/images/background2.jpeg?raw=true");
+background-repeat:no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
+  background-size: cover;
+    background-position: center;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #abff03;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  color: #961509;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid red;
+  border-top: none;
+  text-align: center;
+  height: 100%;
+  background-color: black;
+background-repeat: no-repeat;
+background-size: 100% auto;
+    background-position: center;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 4px 4px 4px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #ffd3ec;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+  
+  .collapsible {
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align:  center;
+  outline: none;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.active, .collapsible:hover {
+  background-color: green;
+}
+
+.content1 {
+  padding: 18px;
+  display: none;
+  overflow: hidden;
+  background-color: yellow;
+  text-align: center;
+}
+
+.content1 ul {
+text-align: left;
+}
+
+li {
+text-align:left;
+}
+</style>
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&veces;</a>
+   <h2 style="color:#c4f7fb;text-align:center;">Héroes adolescentes</h2>
+   <a href="index.html">Inicio</a>
+   <a href="acerca de.html">Acerca de</a>
+   <a href="noticias.html">Noticias</a>
+   <a href="personaje.html">Personaje</a>
+   <a href="historia.html">Historia</a>
+   <a href="ubicación.html">Ubicación</a>
+   <a href="vehicles.html">Vehículos</a>
+</div>
+
+<div clase="tab">
+<button class="tablinks" onclick="openNav()">&#9776;</button>
+   <button class="tablinks" onclick="openCity(event, 'TH')">Héroes adolescentes</button>
+   <button class="tablinks" onclick="openCity(event, 'THC')">Héroes adolescentes: Niños</button>
+   <button class="tablinks" onclick="openCity(event, 'THA')">Héroes adolescentes: Adulto</button>
+   <button class="tablinks" onclick="openCity(event, 'VRTH')">Héroes adolescentes de realidad virtual</button>
+</div>
+<div style="font-weight:bold;background-color: blue;text-align: center;color:yellow;padding:10px;">
+   <h1>Anuncio de Héroes Adolescentes</h1>
+   <p id="announcements"></p>
+</div>
+
+<div id="TH" class="tabcontent">
+<div style="color: #080691;background-color:#00fcf8;margin:18px;padding:1px;">
+<h3>Héroes adolescentes</h3>
+</div>
+<br>
+<div style="color: #080691;background-color:#00fcf8;margin:18px;padding:10px;">
+<h1>Vehículos</h1>
+<p>¡La serie de libros Teenager Heroes contiene muchos vehículos increíbles! La serie de libros Teenager Heroes presentó muchos vehículos increíbles desarrollados por el equipo de Teenager Heroes para que los personajes los usen y se monten dentro de las historias de la serie de libros Teenager Heroes. </p>
+</div>
+<br>
+<div style="color: #080691;background-color:#00fcf8;margin:18px;padding:10px;border-style: solid;border-width: 5px;border-color: purple;">
+<h2>Coche flotante</h2>
+<p>Hover Car es un vehículo propiedad de Li Hui y Hu Jie como una forma de moverse. Podría volar alrededor de la ciudad e incluso al espacio exterior. El Hover Car fue inventado por Li Hui y Hu Jie cuando tenían 11 años.</p>
+<p>Hover Car podría ir bajo el agua y volar al espacio. Podría ayudar a Li Hui y Hu Jie a sumergirse en el río de la ciudad para descubrir y detener a los villanos. Hover Car ofrece muchas características y habilidades increíbles para Li Hui y Hu Jie. Todas las características se enumeran a continuación:</p>
+<br>
+<li>Volar: Hover Car podría volar alrededor de Perle, llevando a Li Hui y Hu Jie a cualquier lugar que deseen.</li>
+<br>
+<li>Submarino: Hover Car también podría sumergirse como un submarino. El Hover Car podría llevar a Li Hui y Hu Jie al lugar más profundo bajo el agua.</li>
+<br>
+<li>Velocidad: Hover Car podría ir súper rápido en el cielo, bajo el agua y en tierra para llevar a Li Hui y Hu Jie a cualquier lugar.</li>
+</div>
+</div>
+
+<div id="THC" class="tabcontent">
+<div style="color: #1c2b03;background-color:#99f505;margin:18px;padding:1px;">
+<h3>Héroes adolescentes: Niños</h3>
+</div>
+<br>
+   <div style="color: #1c2b03;background-color:#99f505;margin:18px;padding:10px;">
+   <h1>Vehículos</h1>
+<p>Teenager Heroes: ¡La serie de libros para niños contiene muchos vehículos increíbles! La serie de libros Teenager Heroes: Children presentó muchos vehículos asombrosos desarrollados por el equipo de Teenager Heroes para que los personajes los usen y se monten dentro de las historias de la serie de libros Teenager Heroes: Children. </p>
+  </div>
+  <br>
+<div style="color: #1c2b03;background-color:#99f505;margin:18px;padding:10px;border-style: solid;border-width: 5px;border-color: red;">
+<h2>Coche flotante</h2>
+<p>Hover Car es un vehículo propiedad de Li Hui y Hu Jie como una forma de moverse. Podría volar alrededor de la ciudad e incluso al espacio exterior. El Hover Car fue inventado por Li Hui y Hu Jie cuando tenían 11 años.</p>
+<p>Hover Car podría ir bajo el agua y volar al espacio. Podría ayudar a Li Hui y Hu Jie a sumergirse en el río de la ciudad para descubrir y detener a los villanos. Hover Car ofrece muchas características y habilidades increíbles para Li Hui y Hu Jie. Todas las características se enumeran a continuación:</p>
+<br>
+<li>Volar: Hover Car podría volar alrededor de Perle, llevando a Li Hui y Hu Jie a cualquier lugar que deseen.</li>
+<br>
+<li>Submarino: Hover Car también podría sumergirse como un submarino. El Hover Car podría llevar a Li Hui y Hu Jie al lugar más profundo bajo el agua.</li>
+<br>
+<li>Velocidad: Hover Car podría ir súper rápido en el cielo, bajo el agua y en tierra para llevar a Li Hui y Hu Jie a cualquier lugar.</li>
+</div>
+</div>
+
+<div id="THA" class="tabcontent">
+<div style="color: #6b1005;background-color:pink;margin:18px;padding:1px;">
+<h3>Héroes Adolescentes: Adulto</h3>
+</div>
+<br>
+   <div style="color: #6b1005;background-color:rosa;margen:18px;relleno:10px;">
+     <h1>Vehículos</h1>
+<p>Teenager Heroes: ¡La serie de libros para adultos contiene muchos vehículos increíbles! Teenager Heroes: la serie de libros para adultos presentaba muchos vehículos asombrosos desarrollados por el equipo de Teenager Heroes para que los personajes los usaran y se montaran dentro de las historias de la serie de libros Teenager Heroes: Adult. </p>
+  </div>
+    <br>
+<div style="color: #6b1005;background-color:pink;margin:18px;padding:10px;border-style: solid;border-width: 5px;border-color: blue;">
+<h2>Coche flotante</h2>
+<p>Hover Car es un vehículo propiedad de Li Hui y Hu Jie como una forma de moverse. Podría volar alrededor de la ciudad e incluso al espacio exterior. El Hover Car fue inventado por Li Hui y Hu Jie cuando tenían 11 años.</p>
+<p>Hover Car podría ir bajo el agua y volar al espacio. Podría ayudar a Li Hui y Hu Jie a sumergirse en el río de la ciudad para descubrir y detener a los villanos. Hover Car ofrece muchas características y habilidades increíbles para Li Hui y Hu Jie. Todas las características se enumeran a continuación:</p>
+<br>
+<li>Volar: Hover Car podría volar alrededor de Perle, llevando a Li Hui y Hu Jie a cualquier lugar que deseen.</li>
+<br>
+<li>Submarino: Hover Car también podría sumergirse como un submarino. El Hover Car podría llevar a Li Hui y Hu Jie al lugar más profundo bajo el agua.</li>
+<br>
+<li>Velocidad: Hover Car podría ir súper rápido en el cielo, bajo el agua y en tierra para llevar a Li Hui y Hu Jie a cualquier lugar.</li>
+</div>
+</div>
+
+<div id="VRTH" class="tabcontent">
+<div style="color: purple;background-color:#a4fc00;margin:18px;padding:1px;">
+<h3>Héroes adolescentes de realidad virtual</h3>
+</div>
+<br>
+   <div style="color: púrpura;color de fondo:#a4fc00;margen:18px;relleno:10px;">
+     <h1>Vehículos</h1>
+<p>¡La serie de libros VR Teenager Heroes contiene muchos vehículos increíbles! La serie de libros VR Teenager Heroes presentó muchos vehículos increíbles desarrollados por el equipo de Teenager Heroes para que los personajes los usen y se monten dentro de las historias de la serie de libros VR Teenager Heroes. </p>
+  </div>
+    <br>
+<div style="color: purple;background-color:#a4fc00;margin:18px;padding:10px;border-style: solid;border-width: 5px;border-color: red;">
+<h2>Coche flotante</h2>
+<p>Hover Car es un vehículo propiedad de Li Hui y Hu Jie como una forma de moverse. Podría volar alrededor de la ciudad e incluso al espacio exterior. El Hover Car fue inventado por Li Hui y Hu Jie cuando tenían 11 años.</p>
+<p>Hover Car podría ir bajo el agua y volar al espacio. Podría ayudar a Li Hui y Hu Jie a sumergirse en el río de la ciudad para descubrir y detener a los villanos. Hover Car ofrece muchas características y habilidades increíbles para Li Hui y Hu Jie. Todas las características se enumeran a continuación:</p>
+<br>
+<li>Volar: Hover Car podría volar alrededor de Perle, llevando a Li Hui y Hu Jie a cualquier lugar que deseen.</li>
+<br>
+<li>Submarino: Hover Car también podría sumergirse como un submarino. El Hover Car podría llevar a Li Hui y Hu Jie al lugar más profundo bajo el agua.</li>
+<br>
+<li>Velocidad: Hover Car podría ir súper rápido en el cielo, bajo el agua y en tierra para llevar a Li Hui y Hu Jie a cualquier lugar.</li>
+</div>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+<script src="announcement.js"></script>
+  <!-- Put this at the end of the <body> tag -->
+<script src="https://swetrix.org/swetrix.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    swetrix.init('tUOZrSzLs6uA')
+    swetrix.trackViews()
+  })
+</script>
+<noscript>
+  <img
+    src="https://api.swetrix.com/log/noscript?pid=tUOZrSzLs6uA"
+    alt=""
+    referrerpolicy="no-referrer-when-downgrade"
+  />
+</noscript>
+
+</body>
+</html> 

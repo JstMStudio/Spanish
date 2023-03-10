@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>News</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+font-family: Arial;
+padding: 15px;
+background-color: #00C9A7;
+background-image: url("https://github.com/JstMStudio/Teenager-Heroes/blob/Github-Pages/images/background2.jpeg?raw=true");
+background-repeat:no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
+  background-size: cover;
+    background-position: center;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #abff03;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  color: #961509;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid red;
+  border-top: none;
+  text-align: center;
+  height: 100vh;
+  background-image: url("https://github.com/JstMStudio/Teenager-Heroes/blob/Github-Pages/images/Teenager%20Heroes%20with%20black%20background.png?raw=true");
+background-repeat: no-repeat;
+background-size: 100% auto;
+    background-position: center;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 4px 4px 4px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #ffd3ec;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+  
+  .collapsible {
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align:  center;
+  outline: none;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.active, .collapsible:hover {
+  background-color: green;
+}
+
+.content1 {
+  padding: 18px;
+  display: none;
+  overflow: hidden;
+  background-color: yellow;
+  text-align: center;
+}
+
+.content1 ul {
+text-align: left;
+}
+</style>
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&veces;</a>
+   <h2 style="color:#c4f7fb;text-align:center;">Héroes adolescentes</h2>
+   <a href="index.html">Inicio</a>
+   <a href="acerca de.html">Acerca de</a>
+   <a href="noticias.html">Noticias</a>
+   <a href="personaje.html">Personaje</a>
+   <a href="historia.html">Historia</a>
+   <a href="ubicación.html">Ubicación</a>
+   <a href="vehicles.html">Vehículos</a>
+</div>
+
+<div clase="tab">
+<button class="tablinks" onclick="openNav()">&#9776;</button>
+   <button class="tablinks" onclick="openCity(event, 'TH')">Héroes adolescentes</button>
+   <button class="tablinks" onclick="openCity(event, 'THC')">Héroes adolescentes: Niños</button>
+   <button class="tablinks" onclick="openCity(event, 'THA')">Héroes adolescentes: Adulto</button>
+   <button class="tablinks" onclick="openCity(event, 'VRTH')">Héroes adolescentes de realidad virtual</button>
+</div>
+<div style="font-weight:bold;background-color: blue;text-align: center;color:yellow;padding:10px;">
+   <h1>Anuncio de Héroes Adolescentes</h1>
+   <p id="announcements"></p>
+</div>
+  
+<div id="TH" class="tabcontent">
+<div style="color: #080691;background-color:#00fcf8;margin:18px;padding:1px;">
+<h3>Héroes adolescentes</h3>
+</div>
+<br>
+<div style="color: #080691;background-color:#00fcf8;margin:18px;padding:10px;">
+   <h1>Noticias</h1>
+     <p>Obtenga las últimas noticias oficiales de Teenager Heroes aquí. Un lugar para obtener las últimas noticias oficiales, como el lanzamiento de un nuevo libro, el lanzamiento de un nuevo personaje, descuentos en libros y mucho más. Todas las noticias publicadas aquí son verificadas y publicadas por la gerencia de Teenager Heroes. </p>
+</div>
+</div>
+
+<div id="THC" class="tabcontent">
+<div style="color: #1c2b03;background-color:#99f505;margin:18px;padding:1px;">
+<h3>Héroes adolescentes: niños</h3>
+</div>
+<br>
+   <div style="color: #1c2b03;background-color:#99f505;margin:18px;padding:10px;">
+     <h1>Noticias</h1>
+     <p>Obtenga las últimas noticias oficiales de Teenager Heroes: Children aquí. Un lugar para obtener las últimas noticias oficiales, como el lanzamiento de un nuevo libro, el lanzamiento de un nuevo personaje, descuentos en libros y mucho más. Todas las noticias publicadas aquí son verificadas y publicadas por la gerencia de Teenager Heroes. </p>
+  </div>
+</div>
+
+<div id="THA" class="tabcontent">
+<div style="color: #6b1005;background-color:pink;margin:18px;padding:1px;">
+<h3>Héroes Adolescentes: Adulto</h3>
+</div>
+<br>
+   <div style="color: #6b1005;background-color:rosa;margen:18px;relleno:10px;">
+     <h1>Noticias</h1>
+     <p>Obtenga las últimas noticias oficiales de Teenager Heroes: Adult aquí. Un lugar para obtener las últimas noticias oficiales, como el lanzamiento de un nuevo libro, el lanzamiento de un nuevo personaje, descuentos en libros y mucho más. Todas las noticias publicadas aquí son verificadas y publicadas por la gerencia de Teenager Heroes. </p>
+  </div>
+</div>
+
+<div id="VRTH" class="tabcontent">
+<div style="color: purple;background-color:#a4fc00;margin:18px;padding:1px;">
+<h3>Héroes adolescentes de realidad virtual</h3>
+</div>
+<br>
+   <div style="color: púrpura;color de fondo:#a4fc00;margen:18px;relleno:10px;">
+     <h1>Noticias</h1>
+     <p>Obtenga las últimas noticias oficiales de VR Teenager Heroes aquí. Un lugar para obtener las últimas noticias oficiales, como el lanzamiento de un nuevo libro, el lanzamiento de un nuevo personaje, descuentos en libros y mucho más. Todas las noticias publicadas aquí son verificadas y publicadas por la gerencia de Teenager Heroes. </p>
+  </div>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+<script src="announcement.js"></script>
+  <!-- Put this at the end of the <body> tag -->
+<script src="https://swetrix.org/swetrix.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    swetrix.init('tUOZrSzLs6uA')
+    swetrix.trackViews()
+  })
+</script>
+<noscript>
+  <img
+    src="https://api.swetrix.com/log/noscript?pid=tUOZrSzLs6uA"
+    alt=""
+    referrerpolicy="no-referrer-when-downgrade"
+  />
+</noscript>
+
+</body>
+</html> 
